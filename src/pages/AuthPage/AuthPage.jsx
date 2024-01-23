@@ -1,10 +1,12 @@
-import React from 'react'
+import { Container, Flex } from "@chakra-ui/react"
 
 export const AuthPage = () => {
     return (
-        <div>
-            hi
-        </div>
+        <Flex minH={"100vh"} justifyCOntent={"center"} alignItems={"center"} px={4}>
+            <Container maxW = {"container.md"} padding={0}>
+                Content
+            </Container>
+        </Flex>
     )
 }
 
