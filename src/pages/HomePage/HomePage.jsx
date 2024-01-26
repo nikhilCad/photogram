@@ -1,6 +1,9 @@
 import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
+//HomePage is the place where we have tje feeds and stuff like that after login
+//We import the sidebar separately in a component
+
 export const HomePage = () => {
     return (
         <Box
@@ -13,7 +16,7 @@ export const HomePage = () => {
 			left={0}
 			px={{ base: 2, md: 4 }}
 		>
-
+                
         </Box>
     )
 }
