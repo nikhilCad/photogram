@@ -25,7 +25,7 @@ const AuthForm = () => {
         <>
             <Box border={"1px solid gray"} borderRadius={4} padding={5}>
                 <VStack spacing={4}>
-                    <Image src="/logo.png" h={24} cursor={"pointer"} alt="Photogram" bg={"white"} />
+                    <Image src="/logoWhite.png" h={24} cursor={"pointer"} alt="Photogram"/>
                     <Input placeholder="Email" fontSize={14} type="email" 
                         value={inputs.email}
                         onChange={(e) => setInputs({...inputs,email:e.target.value})}
