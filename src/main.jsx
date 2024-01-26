@@ -7,14 +7,14 @@ import { extendTheme } from '@chakra-ui/react'
 import {mode} from '@chakra-ui/theme-tools'
 import {BrowserRouter} from 'react-router-dom';
 
-const styles = {
-  global:(props) => ({
-    body:{
-      bg:mode("gray.100", "#000")(props),
-      color:mode("gray.800", "whiteAplha.900")(props)
-    }
-  })
-}
+// const styles = {
+//   global:(props) => ({
+//     body:{
+//       bg:mode("gray.100", "#000")(props),
+//       color:mode("gray.800", "whiteAplha.900")(props)
+//     }
+//   })
+// }
 
 //Chakra UI
 const config = {
