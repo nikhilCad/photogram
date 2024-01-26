@@ -10,6 +10,7 @@ const Search = () => {
 				placement='right'
 				ml={1}
 				openDelay={500}
+				// Show tootip only on small screens where there is no text
 				display={{ base: "block", md: "none" }}
 			>
 				<Flex
