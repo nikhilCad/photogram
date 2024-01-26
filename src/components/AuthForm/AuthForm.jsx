@@ -48,6 +48,7 @@ const AuthForm = () => {
 						{isLogin ? "Don't have an account?" : "Already have an account?"}
 					</Box>
                     {/* Why specify blue colour by ourselves??? */}
+                    {/* setIsLogin from the useState */}
 					<Box onClick={() => setIsLogin(!isLogin)} color={"blue.500"} cursor={"pointer"}>
 						{isLogin ? "Sign up" : "Log in"}
 					</Box>
