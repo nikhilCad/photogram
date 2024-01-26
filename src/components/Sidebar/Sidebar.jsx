@@ -1,6 +1,7 @@
 import { Box, Flex, Link, Image } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { InstagramLogo, InstagramMobileLogo } from "/src/assests/constants.jsx";
+import { InstagramMobileLogo } from "/src/assests/constants.jsx";
+import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {
 	return (
@@ -34,6 +35,11 @@ const Sidebar = () => {
 				>
 					<InstagramMobileLogo />
 				</Link>
+
+				<Flex direction={"column"} gap={5} cursor={"pointer"}>
+					<SidebarItems />
+				</Flex>
+
 			</Flex>
 		</Box>
 	);
