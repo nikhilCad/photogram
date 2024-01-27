@@ -8,12 +8,11 @@ const PostHeader = ({ post, creatorProfile }) => {
 
 	return (
 		<Flex justifyContent={"space-between"} alignItems={"center"} w={"full"} my={2}>
-            Header
 			<Flex alignItems={"center"} gap={2}>
 				{/* {creatorProfile ? (
-					<Link to={`/${creatorProfile.username}`}>
+					<Link to={`/${creatorProfile.username}`}> */}
 						<Avatar src={creatorProfile.profilePicURL} alt='user profile pic' size={"sm"} />
-					</Link>
+					{/* </Link>
 				) : (
 					<SkeletonCircle size='10' />
 				)} */}
@@ -24,8 +23,10 @@ const PostHeader = ({ post, creatorProfile }) => {
 					) : (
 						<Skeleton w={"100px"} h={"10px"} />
 					)} */}
+                    fancyUserName
 
 					{/* <Box color={"gray.500"}>• {timeAgo(post.createdAt)}</Box> */}
+                    <Box color={"gray.500"}>• 2 weeks</Box>
 				</Flex>
 			</Flex>
 			<Box cursor={"pointer"}>
@@ -42,7 +43,8 @@ const PostHeader = ({ post, creatorProfile }) => {
 					// onClick={handleFollowUser}
 					// isLoading={isUpdating}
 				>
-					{/* s */}
+					{/* {isFollowing ? "Unfollow" : "Follow"} */}
+                    Follow
 				</Button>
 			</Box>
 		</Flex>
