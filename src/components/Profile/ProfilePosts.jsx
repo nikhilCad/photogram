@@ -29,13 +29,13 @@ const ProfilePosts = () => {
 				
                 {/* ))} */}
 
-			{/* {!isLoading && ( */}
+			{/* {!isLoading && (
 				<>
 					{posts.map((post) => (
 						<ProfilePost post={post} key={post.id} />
 					))}
 				</>
-			{/* )} */}
+			)} */}
 		</Grid>
 	);
 };
