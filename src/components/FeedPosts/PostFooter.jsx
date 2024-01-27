@@ -67,16 +67,17 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 				</>
 			)}
 
-			{/* {authUser && (
+			{/* {authUser && ( */}
+            {true && (
 				<Flex alignItems={"center"} gap={2} justifyContent={"space-between"} w={"full"}>
 					<InputGroup>
 						<Input
 							variant={"flushed"}
 							placeholder={"Add a comment..."}
 							fontSize={14}
-							onChange={(e) => setComment(e.target.value)}
-							value={comment}
-							ref={commentRef}
+							// onChange={(e) => setComment(e.target.value)}
+							// value={comment}
+							// ref={commentRef}
 						/>
 						<InputRightElement>
 							<Button
@@ -86,15 +87,15 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 								cursor={"pointer"}
 								_hover={{ color: "white" }}
 								bg={"transparent"}
-								onClick={handleSubmitComment}
-								isLoading={isCommenting}
+								// onClick={handleSubmitComment}
+								// isLoading={isCommenting}
 							>
 								Post
 							</Button>
 						</InputRightElement>
 					</InputGroup>
 				</Flex>
-			)} */}
+			)}
 		</Box>
 	);
 };
