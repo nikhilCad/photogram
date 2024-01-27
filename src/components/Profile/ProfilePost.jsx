@@ -30,7 +30,7 @@ import { useState } from "react";
 // import Caption from "../Comment/Caption";
 
 const ProfilePost = ({ post }) => {
-	// const { isOpen, onOpen, onClose } = useDisclosure();
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	// const userProfile = useUserProfileStore((state) => state.userProfile);
 	// const authUser = useAuthStore((state) => state.user);
 	// const showToast = useShowToast();
@@ -72,7 +72,7 @@ const ProfilePost = ({ post }) => {
 				borderColor={"whiteAlpha.300"}
 				position={"relative"}
 				aspectRatio={1 / 1}
-				// onClick={onOpen}
+				onClick={onOpen}
 			>
 				<Flex
 					opacity={0}
@@ -83,6 +83,7 @@ const ProfilePost = ({ post }) => {
 					right={0}
 					bottom={0}
 					bg={"blackAlpha.700"}
+                    // Nice transition
 					transition={"all 0.3s ease"}
 					zIndex={1}
 					justifyContent={"center"}
@@ -110,7 +111,7 @@ const ProfilePost = ({ post }) => {
                 <Image src={"/img4.png"} alt='profile post' w={"100%"} h={"100%"} objectFit={"cover"} />
 			</GridItem>
 
-			{/* <Modal isOpen={isOpen} onClose={onClose} isCentered={true} size={{ base: "3xl", md: "5xl" }}>
+			<Modal isOpen={isOpen} onClose={onClose} isCentered={true} size={{ base: "3xl", md: "5xl" }}>
 				<ModalOverlay />
 				<ModalContent>
 					<ModalCloseButton />
@@ -131,18 +132,18 @@ const ProfilePost = ({ post }) => {
 								justifyContent={"center"}
 								alignItems={"center"}
 							>
-								<Image src={post.imageURL} alt='profile post' />
+								<Image src={"post.imageURL"} alt='profile post' />
 							</Flex>
 							<Flex flex={1} flexDir={"column"} px={10} display={{ base: "none", md: "flex" }}>
 								<Flex alignItems={"center"} justifyContent={"space-between"}>
 									<Flex alignItems={"center"} gap={4}>
-										<Avatar src={userProfile.profilePicURL} size={"sm"} name='As a Programmer' />
+										<Avatar src={"userProfile.profilePicURL"} size={"sm"} name='As a Programmer' />
 										<Text fontWeight={"bold"} fontSize={12}>
-											{userProfile.username}
+											{"userProfile.username"}
 										</Text>
 									</Flex>
 
-									{authUser?.uid === userProfile.uid && (
+									{/* {authUser?.uid === userProfile.uid && (
 										<Button
 											size={"sm"}
 											bg={"transparent"}
@@ -154,24 +155,24 @@ const ProfilePost = ({ post }) => {
 										>
 											<MdDelete size={20} cursor='pointer' />
 										</Button>
-									)}
+									)} */}
 								</Flex>
 								<Divider my={4} bg={"gray.500"} />
 
-								<VStack w='full' alignItems={"start"} maxH={"350px"} overflowY={"auto"}>
+								{/* <VStack w='full' alignItems={"start"} maxH={"350px"} overflowY={"auto"}>
 									{post.caption && <Caption post={post} />}
 									{post.comments.map((comment) => (
 										<Comment key={comment.id} comment={comment} />
 									))}
-								</VStack>
+								</VStack> */}
 								<Divider my={4} bg={"gray.8000"} />
 
-								<PostFooter isProfilePage={true} post={post} />
+								{/* <PostFooter isProfilePage={true} post={post} /> */}
 							</Flex>
 						</Flex>
 					</ModalBody>
 				</ModalContent>
-			</Modal> */}
+			</Modal>
 		</>
 	);
 };
