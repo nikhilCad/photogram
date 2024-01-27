@@ -13,7 +13,8 @@ function App() {
       <Routes>
         <Route path='/' element = {<HomePage/>} />
         <Route path='/auth' element = {<AuthPage/>} />
-        <Route path='/username' element = {<ProfilePage/>} />
+        {/* If page is NOT / or auth THEN call ProfilePage with this url code */}
+        <Route path='/:username' element = {<ProfilePage/>} />
       </Routes>
     </PageLayout>
   )

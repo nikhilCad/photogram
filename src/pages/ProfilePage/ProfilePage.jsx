@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 const ProfilePage = () => {
-	const { username } = useParams();
+	const { username } = useParams();//Gets the username from the url
 	// const { isLoading, userProfile } = useGetUserProfileByUsername(username);
 
 	// const userNotFound = !isLoading && !userProfile;
@@ -18,7 +18,8 @@ const ProfilePage = () => {
 			<Flex py={10} px={4} pl={{ base: 4, md: 10 }} w={"full"} mx={"auto"} flexDirection={"column"}>
 				{/* {!isLoading && userProfile && <ProfileHeader />}
 				{isLoading && <ProfileHeaderSkeleton />} */}
-                <ProfileHeaderSkeleton />
+                <ProfileHeader />
+                {/* <ProfileHeaderSkeleton /> */}
 			</Flex>
 			<Flex
 				px={{ base: 2, sm: 4 }}

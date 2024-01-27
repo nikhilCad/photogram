@@ -26,7 +26,7 @@ const ProfileHeader = () => {
 					alignItems={"center"}
 					w={"full"}
 				>
-					<Text fontSize={{ base: "sm", md: "lg" }}>{userProfile.username}</Text>
+					<Text fontSize={{ base: "sm", md: "lg" }}>{"userProfile.username"}</Text>
 					{/* {visitingOwnProfileAndAuth && (
 						<Flex gap={4} alignItems={"center"} justifyContent={"center"}>
 							<Button
@@ -86,7 +86,7 @@ const ProfileHeader = () => {
                         Full Name
 					</Text>
 				</Flex>
-				<Text fontSize={"sm"}>{userProfile.bio}</Text>
+				<Text fontSize={"sm"}>{"userProfile.bio"}</Text>
 			</VStack>
 			{/* {isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />} */}
 		</Flex>
