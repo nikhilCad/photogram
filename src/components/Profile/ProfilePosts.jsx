@@ -1,9 +1,10 @@
 import { Box, Flex, Grid, Skeleton, Text, VStack } from "@chakra-ui/react";
-// import ProfilePost from "./ProfilePost";
+import ProfilePost from "./ProfilePost";
 // import useGetUserPosts from "../../hooks/useGetUserPosts";
 
 const ProfilePosts = () => {
 	// const { isLoading, posts } = useGetUserPosts();
+    const isLoading = false;
 
 	// const noPostsFound = !isLoading && posts.length === 0;
 	// if (noPostsFound) return <NoPostsFound />;
@@ -11,31 +12,36 @@ const ProfilePosts = () => {
 	return (
 		<Grid
 			templateColumns={{
-				sm: "repeat(1, 1fr)",
-				md: "repeat(3, 1fr)",
+				sm: "repeat(1, 1fr)",//Phones 1 photo only
+				md: "repeat(3, 1fr)",//PC 3 photo
 			}}
 			gap={1}
 			columnGap={1}
 		>
-			{/* {isLoading &&
+			{isLoading &&
 				[0, 1, 2].map((_, idx) => (
-					<VStack key={idx} alignItems={"flex-start"} gap={4}> */}
+                    <>
+                        {/* <VStack key={idx} alignItems={"flex-start"} gap={4}> */}
 
-                    {/* <VStack alignItems={"flex-start"} gap={4}>
-						<Skeleton w={"full"}>
-							<Box h='300px'>contents wrapped</Box>
-						</Skeleton>
-					</VStack> */}
-				
-                {/* ))} */}
+                        <VStack alignItems={"flex-start"} gap={4}>
+                            <Skeleton w={"full"}>
+                                <Box h='300px'>contents wrapped</Box>
+                            </Skeleton>
+                        </VStack>
+                    </>
+                    ))}
 
-			{/* {!isLoading && (
+			{!isLoading && (
 				<>
-					{posts.map((post) => (
+					{/* {posts.map((post) => (
 						<ProfilePost post={post} key={post.id} />
+					))} */}
+
+                    {[0, 1, 2].map((_, idx) => (
+						<ProfilePost />
 					))}
 				</>
-			)} */}
+			)}
 		</Grid>
 	);
 };
