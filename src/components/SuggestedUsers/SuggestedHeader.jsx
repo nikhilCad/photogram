@@ -16,7 +16,7 @@ const SuggestedHeader = () => {
 					<Avatar size={"lg"} src={authUser.profilePicURL} />
 				</Link> */}
                 <Link>
-					<Avatar size={"lg"} src={"authUser.profilePicURL"} />
+					<Avatar size={"lg"} src={"public/profilepic.jpg"} />
 				</Link>
 				<Link>
 					<Text fontSize={12} fontWeight={"bold"}>
