@@ -10,6 +10,9 @@ Firebase - backend
 Zustand - Global State management for React
 React-firebase-hooks - React for firebase
 
+React-firebase-hooks hs many common use-case function like sign in with email, passowrd, logout, giving error codes etc
+
+Zustand is mailny used while logging out to change page from home page to log in page
 You must add a .env file at the root of the project with the following variables from your own firebase account
 
 FIREBASE_APIKEY,
