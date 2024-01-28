@@ -1,14 +1,14 @@
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth, firestore } from "../firebase/firebase";
 import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
-// import useShowToast from "./useShowToast";
+import useShowToast from "./useShowToast";
 // import useAuthStore from "../store/authStore";
 
 const useSignUpWithEmailAndPassword = () => {
     // the package itself gives us all this info
 	const [createUserWithEmailAndPassword, , loading, error] = useCreateUserWithEmailAndPassword(auth);
 
-	// const showToast = useShowToast();
+	const showToast = useShowToast();
 	// const loginUser = useAuthStore((state) => state.login);
 
 	// its async as signup involved
@@ -16,7 +16,7 @@ const useSignUpWithEmailAndPassword = () => {
 
         //Even before trying to signup check this
 		if (!inputs.email || !inputs.password || !inputs.username || !inputs.fullName) {
-			//showToast("Error", "Please fill all the fields", "error");
+			showToast("Error", "Please fill all the fields", "error");
 			return;
 		}
 
@@ -26,7 +26,7 @@ const useSignUpWithEmailAndPassword = () => {
 		const querySnapshot = await getDocs(q);
 
 		if (!querySnapshot.empty) {
-			//showToast("Error", "Username already exists", "error");
+			showToast("Error", "Username already exists", "error");
 			return;
 		}
 
@@ -34,7 +34,7 @@ const useSignUpWithEmailAndPassword = () => {
 			//async function can use await, wait till info fetched, built in function
             const newUser = await createUserWithEmailAndPassword(inputs.email, inputs.password);
 			if (!newUser && error) {
-				//showToast("Error", error.message, "error");
+				showToast("Error", error.message, "error");
 				return;
 			}
 			if (newUser) {
@@ -61,7 +61,7 @@ const useSignUpWithEmailAndPassword = () => {
 				loginUser(userDoc);
 			}
 		} catch (error) {
-			//showToast("Error", error.message, "error");
+			showToast("Error", error.message, "error");
 		}
 	};
 
