@@ -169,6 +169,10 @@ const ProfilePost = ({ post }) => {
 									<Comment/>
 									<Comment/>
 									<Comment/>
+									<Comment/>
+									<Comment/>
+									<Comment/>
+									<Comment/>
 								</VStack>
 								<Divider my={4} bg={"gray.8000"} />
 
