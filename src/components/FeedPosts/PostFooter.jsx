@@ -42,6 +42,7 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 				</Text>
 			)}
 
+			{/* If it profile page don't shows stuff like view all comments as Modal there already opened */}
 			{/* {!isProfilePage && ( */}
             {!false && (
 				<>

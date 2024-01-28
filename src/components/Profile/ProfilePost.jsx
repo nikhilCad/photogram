@@ -17,7 +17,7 @@ import {
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-// import Comment from "../Comment/Comment";
+import Comment from "../Comment/Comment";
 // import PostFooter from "../FeedPosts/PostFooter";
 // import useUserProfileStore from "../../store/userProfileStore";
 // import useAuthStore from "../../store/authStore";
@@ -159,12 +159,17 @@ const ProfilePost = ({ post }) => {
 								</Flex>
 								<Divider my={4} bg={"gray.500"} />
 
-								{/* <VStack w='full' alignItems={"start"} maxH={"350px"} overflowY={"auto"}>
-									{post.caption && <Caption post={post} />}
-									{post.comments.map((comment) => (
+								{/* Overflow gives scrollbar if too many comments */}
+								<VStack w='full' alignItems={"start"} maxH={"350px"} overflowY={"auto"}>
+									{/* {post.caption && <Caption post={post} />} */}
+									{/* {post.comments.map((comment) => (
 										<Comment key={comment.id} comment={comment} />
-									))}
-								</VStack> */}
+									))} */}
+									<Comment/>
+									<Comment/>
+									<Comment/>
+									<Comment/>
+								</VStack>
 								<Divider my={4} bg={"gray.8000"} />
 
 								{/* <PostFooter isProfilePage={true} post={post} /> */}
