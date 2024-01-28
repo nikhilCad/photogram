@@ -19,4 +19,12 @@ FIREBASE_MESSAGINGSENDERID,
 FIREBASE_APPID,
 FIREBASE_MEASUREMENTID
 
-at 2:46:55
+In this project, we use Firebase used for -> Authentication, Database, and Image storage
+
+Database is of users(followers, posts etc)
+
+of Posts(image url, likes, comments etc)
+
+of comments(author content, created at etc)
+
+at 2:57:00
