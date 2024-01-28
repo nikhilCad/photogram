@@ -7,4 +7,4 @@ React + Firebase + Vite + ChakraUI
 ChakraUI has many common elements already defined for us to use
 Vite is used because it makes stuff work fast
 
-at 2:45:45
+at 2:46:55
