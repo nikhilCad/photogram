@@ -8,7 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 //For Environment variables
-require('dotenv').config()
+// require('dotenv').config()
 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
