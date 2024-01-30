@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import { useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
-// import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "/src/components/Navbar/Navbar.jsx";
 
 // instead of adding the Sidebar component to every page, we can add it only 
 //once to the PageLayout component and wrap the children with it. This way, we can 
@@ -18,8 +18,8 @@ const PageLayout = ({ children }) => {
 	//sidebar rendering
 	const [user, loading] = useAuthState(auth);
 	const canRenderSidebar = pathname !== "/auth" && user;
-	// const canRenderNavbar = !user && !loading && pathname !== "/auth";
-	const canRenderNavbar = false;
+	//Show Navbar asking user to Log In
+	const canRenderNavbar = !user && !loading && pathname !== "/auth";
 
 	const checkingUserIsAuth = !user && loading;
 	if (checkingUserIsAuth) return <PageLayoutSpinner />;
