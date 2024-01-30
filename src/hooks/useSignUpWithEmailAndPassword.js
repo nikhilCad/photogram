@@ -22,11 +22,12 @@ const useSignUpWithEmailAndPassword = () => {
 			return;
 		}
 
+		//from firebase docs
 		const usersRef = collection(firestore, "users");
-
 		const q = query(usersRef, where("username", "==", inputs.username));
 		const querySnapshot = await getDocs(q);
 
+		//if user does already exists, avoid duplicate entires in firebase
 		if (!querySnapshot.empty) {
 			showToast("Error", "Username already exists", "error");
 			return;

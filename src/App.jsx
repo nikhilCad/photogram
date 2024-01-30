@@ -10,6 +10,7 @@ import { auth } from "./firebase/firebase";
 
 function App() {
 
+  //is user logged in
   const [authUser] = useAuthState(auth);
 
   return (
