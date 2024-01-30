@@ -1,26 +1,40 @@
-import { Box, Flex } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+import { Box, Flex, Spinner } from "@chakra-ui/react";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { useLocation } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
+// import Navbar from "../../components/Navbar/Navbar";
 
-// instead of adding the Sidebar component to every page, we can add it only once to the PageLayout component 
-//and wrap the children with it. This way, we can have a sidebar on every page except the AuthPage.
-//We added this logic in App.jsx itself!
+// instead of adding the Sidebar component to every page, we can add it only 
+//once to the PageLayout component and wrap the children with it. This way, we can 
+//have a sidebar on every page except the AuthPage.
+//We added this logic in App.jsx itself
 
 const PageLayout = ({ children }) => {
-    //children are the child pages in App.jsx
 	const { pathname } = useLocation();
+	//useAuthState is built in function to check if user is logged in or not
+	//user = null if not logged in
+	//this also means logged out user can see someone's profile, but without
+	//sidebar rendering
+	const [user, loading] = useAuthState(auth);
+	const canRenderSidebar = pathname !== "/auth" && user;
+	// const canRenderNavbar = !user && !loading && pathname !== "/auth";
+	const canRenderNavbar = false;
+
+	const checkingUserIsAuth = !user && loading;
+	if (checkingUserIsAuth) return <PageLayoutSpinner />;
 
 	return (
-		<Flex>
-
-			{pathname !== "/auth" ? (
-                <Box w={{ base: "70px", md: "240px" }}>
-                    <Sidebar/>
-                </Box>
-                    ): null}
-
+		<Flex flexDir={canRenderNavbar ? "column" : "row"}>
+			{/* sidebar on the left */}
+			{canRenderSidebar ? (
+				<Box w={{ base: "70px", md: "240px" }}>
+					<Sidebar />
+				</Box>
+			) : null}
+			{/* Navbar */}
+			{canRenderNavbar ? <Navbar /> : null}
 			{/* the page content on the right */}
-            {/* Need to pass those as props whenever called */}
 			<Box flex={1} w={{ base: "calc(100% - 70px)", md: "calc(100% - 240px)" }} mx={"auto"}>
 				{children}
 			</Box>
@@ -29,3 +43,11 @@ const PageLayout = ({ children }) => {
 };
 
 export default PageLayout;
+
+const PageLayoutSpinner = () => {
+	return (
+		<Flex flexDir='column' h='100vh' alignItems='center' justifyContent='center'>
+			<Spinner size='xl' />
+		</Flex>
+	);
+};
