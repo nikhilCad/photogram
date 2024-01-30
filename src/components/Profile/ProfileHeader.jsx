@@ -88,7 +88,7 @@ const ProfileHeader = () => {
 						{userProfile.fullName}
 					</Text>
 				</Flex>
-				<Text fontSize={"sm"}>{"userProfile.bio"}</Text>
+				<Text fontSize={"sm"}>{userProfile.bio}</Text>
 			</VStack>
 			{/* {isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />} */}
 		</Flex>
