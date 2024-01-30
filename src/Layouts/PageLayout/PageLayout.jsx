@@ -21,6 +21,7 @@ const PageLayout = ({ children }) => {
 	//Show Navbar asking user to Log In
 	const canRenderNavbar = !user && !loading && pathname !== "/auth";
 
+	//show loading spinner, spinner just loading circle
 	const checkingUserIsAuth = !user && loading;
 	if (checkingUserIsAuth) return <PageLayoutSpinner />;
 
