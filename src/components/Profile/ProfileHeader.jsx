@@ -1,13 +1,15 @@
 import { Avatar, AvatarGroup, Button, Flex, Text, VStack, useDisclosure } from "@chakra-ui/react";
 import useUserProfileStore from "../../store/userProfileStore";
 import useAuthStore from "../../store/authStore";
-// import EditProfile from "./EditProfile";
+import EditProfile from "./EditProfile";
 // import useFollowUser from "../../hooks/useFollowUser";
 
 const ProfileHeader = () => {
 	const { userProfile } = useUserProfileStore();
 	const authUser = useAuthStore((state) => state.user);
-	// const { isOpen, onOpen, onClose } = useDisclosure();
+	//useDisclosure use for Modal(the big popup :) ), used at very last line of this component
+	//to oen EditProfile
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	// const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(userProfile?.uid);
 	const visitingOwnProfileAndAuth = authUser && authUser.username === userProfile.username;
 	const visitingAnotherProfileAndAuth = authUser && authUser.username !== userProfile.username;
@@ -39,7 +41,7 @@ const ProfileHeader = () => {
 								color={"black"}
 								_hover={{ bg: "whiteAlpha.800" }}
 								size={{ base: "xs", md: "sm" }}
-								// onClick={onOpen}
+								onClick={onOpen}
 							>
 								Edit Profile
 							</Button>
@@ -90,7 +92,7 @@ const ProfileHeader = () => {
 				</Flex>
 				<Text fontSize={"sm"}>{userProfile.bio}</Text>
 			</VStack>
-			{/* {isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />} */}
+			{isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />}
 		</Flex>
 	);
 };
