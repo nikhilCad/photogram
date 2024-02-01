@@ -1,4 +1,4 @@
-Photogram - An Instagram Clone
+Photogram - An Instagram Clone - Try to not call it a clone lol
 
 To run -> npm run dev
 
@@ -10,9 +10,15 @@ Firebase - backend
 Zustand - Global State management for React
 React-firebase-hooks - React for firebase
 
+CHakraUI has Text, Avatar, VStack, Flexbox, Modal, Button etc
+
 React-firebase-hooks hs many common use-case function like sign in with email, passowrd, logout, giving error codes etc
 
-Zustand is mailny used while logging out to change page from home page to log in page
+Firebase - used for authentication, storage, and database, images are stored as base64 encoded string and they have a maximum size of 2Mb
+
+Consists of reusable components and hooks like usePreviewImg.js which is used to select new profile picture in edit profile and create new post in photogram
+
+Zustand is mainly used used for state management, so that our changes immediately reflect, also used for chaning state between homepage and login page 
 You must add a .env file at the root of the project with the following variables from your own firebase account
 
 FIREBASE_APIKEY,
@@ -41,4 +47,4 @@ Has Google Login
 
 a@a.com a a 123456
 
-at 4:38:40
+at 5:11:18
