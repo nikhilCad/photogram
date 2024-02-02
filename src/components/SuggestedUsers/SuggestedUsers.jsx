@@ -13,7 +13,8 @@ const SuggestedUsers = () => {
 		<VStack py={8} px={6} gap={4}>
 			<SuggestedHeader />
 
-			{/* {suggestedUsers.length !== 0 && ( */}
+			{/* Only show this header if suggested users exist */}
+			{suggestedUsers.length !== 0 && (
 				<Flex alignItems={"center"} justifyContent={"space-between"} w={"full"}>
 					<Text fontSize={12} fontWeight={"bold"} color={"gray.500"}>
 						Suggested for you
@@ -22,7 +23,7 @@ const SuggestedUsers = () => {
 						See All
 					</Text>
 				</Flex>
-			{/* )} */}
+			)}
 
 			{suggestedUsers.map((user) => (
 				<SuggestedUser user={user} key={user.id} />

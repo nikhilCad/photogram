@@ -61,6 +61,7 @@ const useFollowUser = (userId) => {
 					following: [...authUser.following, userId],
 				});
 
+				//This check used if not in profile page, but following from suggestions
 				if (userProfile)
 					setUserProfile({
 						...userProfile,
