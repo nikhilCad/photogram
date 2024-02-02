@@ -26,11 +26,11 @@ const SuggestedUsers = () => {
 
 			{/* {suggestedUsers.map((user) => ( */}
 				{/* <SuggestedUser user={user} key={user.id} /> */}
+                {/* <SuggestedUser />
                 <SuggestedUser />
                 <SuggestedUser />
                 <SuggestedUser />
-                <SuggestedUser />
-                <SuggestedUser />
+                <SuggestedUser /> */}
 			{/* ))} */}
 		</VStack>
 	);
