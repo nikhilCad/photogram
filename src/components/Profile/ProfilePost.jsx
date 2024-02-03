@@ -19,7 +19,7 @@ import { FaComment } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Comment from "../Comment/Comment";
 // import PostFooter from "../FeedPosts/PostFooter";
-// import useUserProfileStore from "../../store/userProfileStore";
+import useUserProfileStore from "../../store/userProfileStore";
 // import useAuthStore from "../../store/authStore";
 // import useShowToast from "../../hooks/useShowToast";
 import { useState } from "react";
@@ -31,7 +31,7 @@ import { useState } from "react";
 
 const ProfilePost = ({ post }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	// const userProfile = useUserProfileStore((state) => state.userProfile);
+	const userProfile = useUserProfileStore((state) => state.userProfile);
 	// const authUser = useAuthStore((state) => state.user);
 	// const showToast = useShowToast();
 	// const [isDeleting, setIsDeleting] = useState(false);
@@ -92,23 +92,23 @@ const ProfilePost = ({ post }) => {
 						<Flex>
 							<AiFillHeart size={20} />
 							<Text fontWeight={"bold"} ml={2}>
-								{/* {post.likes.length} */}
-                                5
+								{post.likes.length}
+                                {/* 5 */}
 							</Text>
 						</Flex>
 
 						<Flex>
 							<FaComment size={20} />
 							<Text fontWeight={"bold"} ml={2}>
-								{/* {post.comments.length} */}
-                                1
+								{post.comments.length}
+                                {/* 1 */}
 							</Text>
 						</Flex>
 					</Flex>
 				</Flex>
 
-				{/* <Image src={post.imageURL} alt='profile post' w={"100%"} h={"100%"} objectFit={"cover"} /> */}
-                <Image src={"/img4.png"} alt='profile post' w={"100%"} h={"100%"} objectFit={"cover"} />
+				<Image src={post.imageURL} alt='profile post' w={"100%"} h={"100%"} objectFit={"cover"} />
+                {/* <Image src={"/img4.png"} alt='profile post' w={"100%"} h={"100%"} objectFit={"cover"} /> */}
 			</GridItem>
 
 			<Modal isOpen={isOpen} onClose={onClose} isCentered={true} size={{ base: "3xl", md: "5xl" }}>
@@ -132,14 +132,14 @@ const ProfilePost = ({ post }) => {
 								justifyContent={"center"}
 								alignItems={"center"}
 							>
-								<Image src={"post.imageURL"} alt='profile post' />
+								<Image src={post.imageURL} alt='profile post' />
 							</Flex>
 							<Flex flex={1} flexDir={"column"} px={10} display={{ base: "none", md: "flex" }}>
 								<Flex alignItems={"center"} justifyContent={"space-between"}>
 									<Flex alignItems={"center"} gap={4}>
-										<Avatar src={"userProfile.profilePicURL"} size={"sm"} name='As a Programmer' />
+										<Avatar src={userProfile.profilePicURL} size={"sm"} name='As a Programmer' />
 										<Text fontWeight={"bold"} fontSize={12}>
-											{"userProfile.username"}
+											{userProfile.username}
 										</Text>
 									</Flex>
 
