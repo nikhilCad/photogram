@@ -2,7 +2,7 @@ Photogram - An image sharing social media platform
 
 <!-- ![Demo Video](https://youtu.be/O-jrVEzI-ZU) -->
 
-Watch the demo on youtube
+Watch the demo on Youtube
 
 [![Photogram](http://img.youtube.com/vi/O-jrVEzI-ZU/0.jpg)](http://www.youtube.com/watch?v=O-jrVEzI-ZU "Photogam")
 
