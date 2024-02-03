@@ -167,14 +167,14 @@ const ProfilePost = ({ post }) => {
 									{post.comments.map((comment) => (
 										<Comment key={comment.id} comment={comment} />
 									))}
+									{/* <Comment/>
 									<Comment/>
 									<Comment/>
 									<Comment/>
 									<Comment/>
 									<Comment/>
 									<Comment/>
-									<Comment/>
-									<Comment/>
+									<Comment/> */}
 								</VStack>
 								<Divider my={4} bg={"gray.8000"} />
 

@@ -15,10 +15,14 @@ const usePostStore = create((set) => ({
 	setPosts: (posts) => set({ posts }),
 	addComment: (postId, comment) =>
 		set((state) => ({
+			//object to update the posts
 			posts: state.posts.map((post) => {
+				//find required post
 				if (post.id === postId) {
 					return {
+						//update the state
 						...post,
+						//comment at end to show at bottom of comment section
 						comments: [...post.comments, comment],
 					};
 				}
