@@ -5,7 +5,7 @@ import usePostComment from "../../hooks/usePostComment";
 import useAuthStore from "../../store/authStore";
 import useLikePost from "../../hooks/useLikePost";
 import { timeAgo } from "../../utils/timeAgo";
-// import CommentsModal from "../Modals/CommentsModal";
+import CommentsModal from "/src/components/Comment/CommentsModal.jsx";
 
 const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 	const { isCommenting, handlePostComment } = usePostComment();
@@ -44,6 +44,7 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 			)}
 
 			{/* If it profile page don't shows stuff like view all comments as Modal there already opened */}
+			{/* on the left panel */}
 			
             {!isProfilePage && (
 				<>
@@ -59,13 +60,13 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 							View all {post.comments.length} comments
 						</Text>
 					)}
-                    {10 > 0 && (
+                    {/* {10 > 0 && (
 						<Text fontSize='sm' color={"gray"} cursor={"pointer"}>
 							View all 2 comments
 						</Text>
-					)}
+					)} */}
 					{/* COMMENTS MODAL ONLY IN THE HOME PAGE */}
-					{/* {isOpen ? <CommentsModal isOpen={isOpen} onClose={onClose} post={post} /> : null} */}
+					{isOpen ? <CommentsModal isOpen={isOpen} onClose={onClose} post={post} /> : null}
 				</>
 			)}
 
