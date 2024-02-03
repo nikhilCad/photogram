@@ -25,10 +25,12 @@ const CommentsModal = ({ isOpen, onClose, post }) => {
 	};
 
 	useEffect(() => {
+        //If new comment posted scroll to bottom
 		const scrollToBottom = () => {
 			commentsContainerRef.current.scrollTop = commentsContainerRef.current.scrollHeight;
 		};
 		if (isOpen) {
+            //need some time for frontend to load the components
 			setTimeout(() => {
 				scrollToBottom();
 			}, 100);
