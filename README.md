@@ -4,7 +4,7 @@ Photogram - An image sharing social media platform
 
 Watch the demo on Youtube
 
-[![Photogram](http://img.youtube.com/vi/O-jrVEzI-ZU/0.jpg)](http://www.youtube.com/watch?v=O-jrVEzI-ZU "Photogam")
+[![Photogram](http://img.youtube.com/vi/O-jrVEzI-ZU/0.jpg)](http://www.youtube.com/watch?v=O-jrVEzI-ZU "Photogram")
 
 <!-- ![Home Page](public/readme1.png) -->
 
