@@ -54,6 +54,7 @@ const CommentsModal = ({ isOpen, onClose, post }) => {
 							<Comment key={idx} comment={comment} />
 						))}
 					</Flex>
+                    {/* Post comment from the Modal as well */}
 					<form onSubmit={handleSubmitComment} style={{ marginTop: "2rem" }}>
 						<Input placeholder='Comment' size={"sm"} ref={commentRef} />
 						<Flex w={"full"} justifyContent={"flex-end"}>
