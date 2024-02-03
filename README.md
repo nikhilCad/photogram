@@ -1,5 +1,7 @@
 Photogram - An image sharing social media platform
 
+![Home Page](public/readme1.png)
+
 To run -> 
 ```
 npm run dev
