@@ -1,8 +1,8 @@
 Photogram - An image sharing social media platform
 
-![Demo Video](public/readmeVideo.gif)
+![Demo Video](public/output.gif)
 
-![Home Page](public/readme1.png)
+<!-- ![Home Page](public/readme1.png) -->
 
 To run -> 
 ```
