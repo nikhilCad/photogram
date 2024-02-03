@@ -1,7 +1,7 @@
 import { Avatar, Flex, Skeleton, SkeletonCircle, Text } from "@chakra-ui/react";
 import useGetUserProfileById from "../../hooks/useGetUserProfileById";
 import { Link } from "react-router-dom";
-// import { timeAgo } from "../../utils/timeAgo";
+import { timeAgo } from "../../utils/timeAgo";
 
 const Comment = ({ comment }) => {
 
@@ -27,8 +27,9 @@ const Comment = ({ comment }) => {
 					<Text fontSize={14}>{comment.comment}</Text>
 				</Flex>
 				<Text fontSize={12} color={"gray"}>
-					{/* {timeAgo(comment.createdAt)} */}
-                    2s
+					{/* This util simply converts this time in seconds to
+					seconds, hours, day etc */}
+					{timeAgo(comment.createdAt)}
 				</Text>
 			</Flex>
 		</Flex>

@@ -27,7 +27,7 @@ import { deleteObject, ref } from "firebase/storage";
 import { firestore, storage } from "../../firebase/firebase";
 import { arrayRemove, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import usePostStore from "../../store/postStore";
-// import Caption from "../Comment/Caption";
+import Caption from "/src/components/Comment/Caption.jsx";
 
 const ProfilePost = ({ post }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -163,7 +163,7 @@ const ProfilePost = ({ post }) => {
 
 								{/* Overflow gives scrollbar if too many comments */}
 								<VStack w='full' alignItems={"start"} maxH={"350px"} overflowY={"auto"}>
-									{/* {post.caption && <Caption post={post} />} */}
+									{post.caption && <Caption post={post} />}
 									{post.comments.map((comment) => (
 										<Comment key={comment.id} comment={comment} />
 									))}
