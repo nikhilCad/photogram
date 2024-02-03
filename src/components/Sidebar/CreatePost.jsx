@@ -122,6 +122,7 @@ const CreatePost = () => {
 
 export default CreatePost;
 
+//hook to create the posts
 function useCreatePost() {
 	const showToast = useShowToast();
 	const [isLoading, setIsLoading] = useState(false);
@@ -131,10 +132,13 @@ function useCreatePost() {
 	const userProfile = useUserProfileStore((state) => state.userProfile);
 	const { pathname } = useLocation();
 
+	//async as uploads
 	const handleCreatePost = async (selectedFile, caption) => {
 		if (isLoading) return;
+		//select some file !!
 		if (!selectedFile) throw new Error("Please select an image");
 		setIsLoading(true);
+		//structure of a post
 		const newPost = {
 			caption: caption,
 			likes: [],
@@ -144,20 +148,26 @@ function useCreatePost() {
 		};
 
 		try {
+			//addDoc function adds to that "posts" collection
 			const postDocRef = await addDoc(collection(firestore, "posts"), newPost);
 			const userDocRef = doc(firestore, "users", authUser.uid);
+			//how posts is stored
 			const imageRef = ref(storage, `posts/${postDocRef.id}`);
 
+			//wait for upload base64 encoded url representing the image
 			await updateDoc(userDocRef, { posts: arrayUnion(postDocRef.id) });
 			await uploadString(imageRef, selectedFile, "data_url");
+			//getting the image in frontend
 			const downloadURL = await getDownloadURL(imageRef);
 
 			await updateDoc(postDocRef, { imageURL: downloadURL });
 
 			newPost.imageURL = downloadURL;
 
+			//check if we only creating our own posts
 			if (userProfile.uid === authUser.uid) createPost({ ...newPost, id: postDocRef.id });
 
+			//addPost is the function for the userProfile, so it updates there as well
 			if (pathname !== "/" && userProfile.uid === authUser.uid) addPost({ ...newPost, id: postDocRef.id });
 
 			showToast("Success", "Post created successfully", "success");

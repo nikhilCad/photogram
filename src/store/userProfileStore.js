@@ -7,6 +7,7 @@ const useUserProfileStore = create((set) => ({
 	//update the number of posts in the profile page
 	addPost: (post) =>
 		set((state) => ({
+			//existing sate + existing posts +  new post
 			userProfile: { ...state.userProfile, posts: [post.id, ...state.userProfile.posts] },
 		})),
 	deletePost: (postId) =>
