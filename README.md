@@ -28,16 +28,13 @@ Zustand is mainly used used for state management, so that our changes immediatel
 React-firebase-hooks - React for firebase, it has many common use-case function like sign in with email, with Google, passowrd, logout, giving error codes etc
 
 Firebase - used for authentication, storage, and database, images are stored as base64 encoded string and they have a maximum size of 2Mb
-
 Database is of users(followers, posts etc)
-
 of Posts(image url, likes, comments etc)
-
 of comments(author content, created at etc)
 
 Consists of reusable components and hooks like usePreviewImg.js which is used to select new profile picture in edit profile and create new post in photogram
 
-You must add a .env file at the root of the project with the following variables from your own firebase account
+**You must add a .env file at the root of the project with the following variables from your own firebase account**
 
 ```
 FIREBASE_APIKEY,
