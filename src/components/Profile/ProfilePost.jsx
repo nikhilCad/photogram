@@ -20,7 +20,7 @@ import { MdDelete } from "react-icons/md";
 import Comment from "../Comment/Comment";
 // import PostFooter from "../FeedPosts/PostFooter";
 import useUserProfileStore from "../../store/userProfileStore";
-// import useAuthStore from "../../store/authStore";
+import useAuthStore from "../../store/authStore";
 // import useShowToast from "../../hooks/useShowToast";
 import { useState } from "react";
 // import { deleteObject, ref } from "firebase/storage";
@@ -32,7 +32,7 @@ import { useState } from "react";
 const ProfilePost = ({ post }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const userProfile = useUserProfileStore((state) => state.userProfile);
-	// const authUser = useAuthStore((state) => state.user);
+	const authUser = useAuthStore((state) => state.user);
 	// const showToast = useShowToast();
 	// const [isDeleting, setIsDeleting] = useState(false);
 	// const deletePost = usePostStore((state) => state.deletePost);
@@ -143,19 +143,19 @@ const ProfilePost = ({ post }) => {
 										</Text>
 									</Flex>
 
-									{/* {authUser?.uid === userProfile.uid && (
+									{authUser?.uid === userProfile.uid && (
 										<Button
 											size={"sm"}
 											bg={"transparent"}
 											_hover={{ bg: "whiteAlpha.300", color: "red.600" }}
 											borderRadius={4}
 											p={1}
-											onClick={handleDeletePost}
-											isLoading={isDeleting}
+											// onClick={handleDeletePost}
+											// isLoading={isDeleting}
 										>
 											<MdDelete size={20} cursor='pointer' />
 										</Button>
-									)} */}
+									)}
 								</Flex>
 								<Divider my={4} bg={"gray.500"} />
 
