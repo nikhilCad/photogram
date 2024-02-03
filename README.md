@@ -8,6 +8,14 @@ Watch the demo on Youtube
 
 <!-- ![Home Page](public/readme1.png) -->
 
+Some screenshots:
+
+![Home Page](public/readme1.png)
+
+![Create Post](public/readme2.png)
+
+![Profile Page](public/readme3.png)
+
 To run -> 
 ```
 npm run dev
