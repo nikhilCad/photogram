@@ -14,6 +14,7 @@ const useUserProfileStore = create((set) => ({
 		set((state) => ({
 			userProfile: {
 				...state.userProfile,
+				//remove the post by checking id
 				posts: state.userProfile.posts.filter((id) => id !== postId),
 			},
 		})),
