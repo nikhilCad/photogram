@@ -1,6 +1,6 @@
 Photogram - An image sharing social media platform
 
-![Demo Video](public/readmeVideo.mp4)
+![Demo Video](public/readmeVideo.mov)
 
 ![Home Page](public/readme1.png)
 
