@@ -28,7 +28,7 @@ const FeedPosts = () => {
 			{!isLoading && posts.length === 0 && (
 				<>
 					<Text fontSize={"md"} color={"red.400"}>
-						No posts to show
+						No posts to show. Follow some people to add their posts in the feed.
 					</Text>
 				</>
 			)}
