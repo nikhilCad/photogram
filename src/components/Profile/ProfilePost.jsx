@@ -40,6 +40,7 @@ const ProfilePost = ({ post }) => {
 
 	const handleDeletePost = async () => {
 		if (!window.confirm("Are you sure you want to delete this post?")) return;
+		//no reruns of delete
 		if (isDeleting) return;
 
 		try {
@@ -48,6 +49,7 @@ const ProfilePost = ({ post }) => {
 			const userRef = doc(firestore, "users", authUser.uid);
 			await deleteDoc(doc(firestore, "posts", post.id));
 
+			//remove from the document
 			await updateDoc(userRef, {
 				posts: arrayRemove(post.id),
 			});
