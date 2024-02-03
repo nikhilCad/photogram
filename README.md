@@ -1,6 +1,8 @@
 Photogram - An image sharing social media platform
 
-![Demo Video](https://youtu.be/O-jrVEzI-ZU)
+<!-- ![Demo Video](https://youtu.be/O-jrVEzI-ZU) -->
+
+[![Demo Video](http://img.youtube.com/vi/O-jrVEzI-ZU/0.jpg)](http://www.youtube.com/watch?v=O-jrVEzI-ZU "Video Title")
 
 <!-- ![Home Page](public/readme1.png) -->
 
